@@ -15,7 +15,7 @@ It improves the syntax highlighting:
 
 ## Additional configuration for Vala files
 
-In order to adhere to the official [vala coding style][vcs], a few commands should be placed inside your `.vimrc`:
+In order to adhere to the official [Vala Coding Style][vcs], a few commands should be placed inside your `.vimrc`:
 
 ```vim
 if has("autocmd")
@@ -26,7 +26,7 @@ endif
 noremap <F8> "gyiwO[CCode (cname = "<ESC>"gpa")]<ESC>
 ```
 
-See [CCode][ccode] for the mapping.
+See [Vala Legacy Bindings][ccode] for the mapping.
 
 [vala]:https://wiki.gnome.org/Projects/Vala
 [vala-vim]:https://wiki.gnome.org/Projects/Vala/Vim
