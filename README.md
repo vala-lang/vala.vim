@@ -13,6 +13,23 @@ It improves the syntax highlighting:
 * Operators
 * formatting characters in `printf`-like methods
 
+## Additional configuration for Vala files
+
+In order to adhere to the official [vala coding style][vcs], a few commands should be placed inside your `.vimrc`:
+
+```vim
+if has("autocmd")
+	autocmd FileType vala setlocal ts=4 sts=4 sw=4 tw=200
+endifo
+
+" Mapping to ease the creation of CCode in vapi files
+noremap <F8> "gyiwO[CCode (cname = "<ESC>"gpa")]<ESC>
+```
+
+See [CCode][ccode] for the mapping.
+
 [vala]:https://wiki.gnome.org/Projects/Vala
 [vala-vim]:https://wiki.gnome.org/Projects/Vala/Vim
 [tkztmk]:https://github.com/tkztmk/vim-vala
+[vcs]:https://wiki.gnome.org/Projects/Vala/Hacking#Coding_Style
+[ccode]:https://wiki.gnome.org/Projects/Vala/LegacyBindings
