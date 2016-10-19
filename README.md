@@ -20,7 +20,7 @@ In order to adhere to the official [vala coding style][vcs], a few commands shou
 ```vim
 if has("autocmd")
 	autocmd FileType vala setlocal ts=4 sts=4 sw=4 tw=200
-endifo
+endif
 
 " Mapping to ease the creation of CCode in vapi files
 noremap <F8> "gyiwO[CCode (cname = "<ESC>"gpa")]<ESC>
