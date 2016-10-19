@@ -4,7 +4,8 @@
 " 		Hans Vercammen <hveso3@gmail.com>
 " 		pancake <pancake@nopcode.org>
 " 		Sebastian Reichel <sre@ring0.de>
-" Last Change: 	2012-02-19
+" 		Adrià Arrufat <adria.arrufat@protonmail.ch>
+" Last Change: 	2016-10-19
 " Filenames: 	*.vala *.vapi
 "
 " REFERENCES:
@@ -15,7 +16,7 @@
 " 	- better error checking for known errors
 " 	- full support for valadoc
 "
-" 	add vala in /usr/share/vim/vim73/scripts.vim below ruby
+" 	add vala in /usr/share/vim/vim80/scripts.vim below ruby
 " 	to have shebang support
 
 if exists("b:current_syntax")
@@ -29,6 +30,8 @@ set cpo&vim
 syn keyword valaType			bool char double float size_t ssize_t string unichar void
 syn keyword valaType 			int int8 int16 int32 int64 long short
 syn keyword valaType 			uint uint8 uint16 uint32 uint64 ulong ushort
+" Container types
+syn match valaType			"\w\(\w\)*\(\s\+\)\?<"he=e-1,me=e-1 " Foo<Bar>
 " Storage keywords
 syn keyword valaStorage			class delegate enum errordomain interface namespace struct
 " repeat / condition / label
@@ -47,6 +50,10 @@ syn keyword valaConstant		false null true
 syn keyword valaException		try catch finally throw
 " Unspecified Statements
 syn keyword valaUnspecifiedStatement	as base construct delete get in is lock new out params ref sizeof set this throws typeof using value var yield
+" Methods
+syn match   valaMethod			"\w\(\w\)*\(\s\+\)\?("he=e-1,me=e-1
+" Operators
+syn match   valaOperator		display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\|?\)=\?"
 
 " Comments
 syn cluster valaCommentGroup 		contains=valaTodo
@@ -111,7 +118,8 @@ syn match   valaUserContent 		display "@\I*"
 syn match   valaSpecialError		contained "\\."
 syn match   valaSpecialCharError	contained "[^']"
 syn match   valaSpecialChar		contained +\\["\\'0abfnrtvx]+
-syn region  valaString			start=+"+  end=+"+ end=+$+ contains=valaSpecialChar,valaSpecialError,valaUnicodeNumber,@Spell
+syn match   valaFormatChar		contained +%\([-]\)\?\([+]\)\?\([0-9]\+\)\?\(\.\)\?\([0-9]\+\)\?[dfils%]+
+syn region  valaString			start=+"+  end=+"+ end=+$+ contains=valaSpecialChar,valaSpecialError,valaUnicodeNumber,@Spell,valaFormatChar
 syn region  valaVerbatimString		start=+"""+ end=+"""+ contains=@Spell
 syn match   valaUnicodeNumber		+\\\(u\x\{4}\|U\x\{8}\)+ contained contains=valaUnicodeSpecifier
 syn match   valaUnicodeSpecifier	+\\[uU]+ contained
@@ -156,6 +164,8 @@ hi def link valaException		Exception
 hi def link valaUnspecifiedStatement	Statement
 hi def link valaUnspecifiedKeyword	Keyword
 hi def link valaContextualStatement	Statement
+hi def link valaMethod			Function
+hi def link valaOperator		Operator
 
 hi def link valaCommentError		Error
 hi def link valaCommentStartError	Error
@@ -180,6 +190,7 @@ hi def link valaString			String
 hi def link valaVerbatimString		String
 hi def link valaCharacter		Character
 hi def link valaSpecialChar		SpecialChar
+hi def link valaFormatChar		SpecialChar
 hi def link valaNumber			Number
 hi def link valaUnicodeNumber		SpecialChar
 hi def link valaUnicodeSpecifier	SpecialChar
