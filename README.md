@@ -9,7 +9,7 @@ The base version has been imported directly from the [official site][vala-vim] a
 It improves the syntax highlighting:
 
 * Methods ()
-* Array<type>
+* Arrays and Lists as in `ArrayList<int>`
 * Operators and Delimiters
 * Formatting characters in `printf`-like methods
 * Snippets using [UltiSnips][ultisnips]
