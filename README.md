@@ -10,8 +10,9 @@ It improves the syntax highlighting:
 
 * Methods ()
 * Array<type>
-* Operators
-* formatting characters in `printf`-like methods
+* Operators and Delimiters
+* Formatting characters in `printf`-like methods
+* Snippets using [UltiSnips][ultisnips]
 
 ## Additional configuration for Vala files
 
@@ -33,3 +34,4 @@ See [Vala Legacy Bindings][ccode] for the mapping.
 [tkztmk]:https://github.com/tkztmk/vim-vala
 [vcs]:https://wiki.gnome.org/Projects/Vala/Hacking#Coding_Style
 [ccode]:https://wiki.gnome.org/Projects/Vala/LegacyBindings
+[ultisnips]:https://github.com/sirver/UltiSnips
