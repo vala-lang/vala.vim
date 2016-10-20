@@ -5,7 +5,7 @@
 " 		pancake <pancake@nopcode.org>
 " 		Sebastian Reichel <sre@ring0.de>
 " 		Adrià Arrufat <adria.arrufat@protonmail.ch>
-" Last Change: 	2016-10-19
+" Last Change: 	2016-10-20
 " Filenames: 	*.vala *.vapi
 "
 " REFERENCES:
@@ -54,6 +54,8 @@ syn keyword valaUnspecifiedStatement	as base construct delete get in is lock new
 syn match   valaMethod			"\w\(\w\)*\(\s\+\)\?("he=e-1,me=e-1
 " Operators
 syn match   valaOperator		display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\|?\)=\?"
+" Delimiters
+syn match   valaDelimiter		display "(\|)\|\[\|\]\|,\|;\|{\|}\|\k\@<!_\k\@!\|[[:punct:]]\@<!@[[:punct:]]\@!"
 
 " Comments
 syn cluster valaCommentGroup 		contains=valaTodo
@@ -166,6 +168,7 @@ hi def link valaUnspecifiedKeyword	Keyword
 hi def link valaContextualStatement	Statement
 hi def link valaMethod			Function
 hi def link valaOperator		Operator
+hi def link valaDelimiter		Delimiter
 
 hi def link valaCommentError		Error
 hi def link valaCommentStartError	Error
