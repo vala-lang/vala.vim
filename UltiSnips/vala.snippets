@@ -188,7 +188,26 @@ endsnippet
 
 snippet doc "Valadoc comment" b
 /**
- * ${1:Documentation comment}
+ * ${1:Short description}
+ * 
+ * ${2:Long description}
+ * 
+ * ${3:@param ${4:parameter} ${5:parameter description}}
+ * 
+ * ${6:@return ${7:return value description}}
  */
 $0
+endsnippet
+
+snippet docode "Code inside a Valadoc comment"
+{{{$1}}}
+*$0
+endsnippet
+
+snippet @p "Valadoc parameter"
+@param ${1:parameter} ${2:parameter description}$0
+endsnippet
+
+snippet @r "Valadoc return"
+@return ${1:return value description}$0
 endsnippet
