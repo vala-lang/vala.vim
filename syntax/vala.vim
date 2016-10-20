@@ -30,8 +30,6 @@ set cpo&vim
 syn keyword valaType			bool char double float size_t ssize_t string unichar void
 syn keyword valaType 			int int8 int16 int32 int64 long short
 syn keyword valaType 			uint uint8 uint16 uint32 uint64 ulong ushort
-" Container types
-syn match valaType			"\w\(\w\)*\(\s\+\)\?<"he=e-1,me=e-1 " Foo<Bar>
 " Storage keywords
 syn keyword valaStorage			class delegate enum errordomain interface namespace struct
 " repeat / condition / label
@@ -50,6 +48,8 @@ syn keyword valaConstant		false null true
 syn keyword valaException		try catch finally throw
 " Unspecified Statements
 syn keyword valaUnspecifiedStatement	as base construct delete get in is lock new out params ref sizeof set this throws typeof using value var yield
+" Arrays and Lists
+syn match   valaArray			"\(\w\(\w\)*\(\s\+\)\?<\)\+\(\s\+\)\?\w\(\w\)*>\+\(\s\+\)\?"he=e-1,me=e-1 " Foo<Bar>
 " Methods
 syn match   valaMethod			"\w\(\w\)*\(\s\+\)\?("he=e-1,me=e-1
 " Operators
@@ -166,6 +166,7 @@ hi def link valaException		Exception
 hi def link valaUnspecifiedStatement	Statement
 hi def link valaUnspecifiedKeyword	Keyword
 hi def link valaContextualStatement	Statement
+hi def link valaArray			StorageClass
 hi def link valaMethod			Function
 hi def link valaOperator		Operator
 hi def link valaDelimiter		Delimiter
