@@ -55,7 +55,7 @@ syn match   valaMethod			"\w\(\w\)*\(\s\+\)\?("he=e-1,me=e-1
 " Operators
 syn match   valaOperator		display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\|?\)=\?"
 " Delimiters
-syn match   valaDelimiter		display "(\|)\|\[\|\]\|,\|;\|{\|}\|\k\@<!_\k\@!\|[[:punct:]]\@<!@[[:punct:]]\@!"
+syn match   valaDelimiter		display "(\|)\|\[\|\]\|,\|;\|:\|{\|}\|\k\@<!_\k\@!\|[[:punct:]]\@<!@[[:punct:]]\@!"
 
 " Comments
 syn cluster valaCommentGroup 		contains=valaTodo
