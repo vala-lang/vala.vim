@@ -13,7 +13,7 @@ It improves the syntax highlighting:
 * Operators and Delimiters
 * Formatting characters in `printf`-like methods
 
-It also adds useful snippets using [UltiSnips][ultisnips]
+It also adds useful snippets using [UltiSnips][ultisnips].
 
 ## Additional configuration for Vala files
 
