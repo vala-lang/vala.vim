@@ -9,10 +9,11 @@ The base version has been imported directly from the [official site][vala-vim] a
 It improves the syntax highlighting:
 
 * Methods ()
-* Arrays and Lists as in `ArrayList<int>`
+* Arrays, lists and hash tables as in `Array<int>`, `List<string>` and `HashTable<string, int>`
 * Operators and Delimiters
 * Formatting characters in `printf`-like methods
-* Snippets using [UltiSnips][ultisnips]
+
+It also adds useful snippets using [UltiSnips][ultisnips]
 
 ## Additional configuration for Vala files
 
