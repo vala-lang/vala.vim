@@ -34,7 +34,7 @@ endsnippet
 
 snippet foreach "foreach loop" b
 foreach (var ${1:item} in ${2:list}) {
-	$2;
+	$3;
 }$0
 endsnippet
 
@@ -150,13 +150,11 @@ $0
 endsnippet
 
 snippet ps "print string only" b
-print ("$1\n");
-$0
+print ("$1\n");$0
 endsnippet
 
-snippet p "print statement" b
-print ("$1\n", $2);
-$0
+snippet "p?r?i?n?t?" "print statement" r
+print ("$1\n"${2:, ${3:expression}});$0
 endsnippet
 
 snippet struct "struct statement" b
