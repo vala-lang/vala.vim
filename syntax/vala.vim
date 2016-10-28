@@ -29,7 +29,7 @@ set cpo&vim
 " Types
 syn keyword valaType			bool char double float size_t ssize_t string unichar void
 syn keyword valaType 			int int8 int16 int32 int64 long short
-syn keyword valaType 			uint uint8 uint16 uint32 uint64 ulong ushort
+syn keyword valaType 			uchar uint uint8 uint16 uint32 uint64 ulong ushort
 " Storage keywords
 syn keyword valaStorage			class delegate enum errordomain interface namespace struct
 " repeat / condition / label
