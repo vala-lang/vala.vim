@@ -120,7 +120,7 @@ syn match   valaUserContent 		display "@\I*"
 syn match   valaSpecialError		contained "\\."
 syn match   valaSpecialCharError	contained "[^']"
 syn match   valaSpecialChar		contained +\\["\\'0abfnrtvx]+
-syn match   valaFormatChar		contained +%\(%\|\([-]\)\?\([+]\)\?\([0-9]\+\)\?\(\.\)\?\([0-9]\+\)\?\(l\?[dfui]\|s\)\)+
+syn match   valaFormatChar		contained +%\(%\|\([-]\)\?\([+]\)\?\([0-9]\+\)\?\(\.\)\?\([0-9]\+\)\?\(l\?[dfui]\|c\|g\|hh\?[iu]\|s\)\)+
 syn region  valaString			start=+"+  end=+"+ end=+$+ contains=valaSpecialChar,valaSpecialError,valaUnicodeNumber,@Spell,valaFormatChar
 syn region  valaVerbatimString		start=+"""+ end=+"""+ contains=@Spell
 syn match   valaUnicodeNumber		+\\\(u\x\{4}\|U\x\{8}\)+ contained contains=valaUnicodeSpecifier
