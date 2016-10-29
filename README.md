@@ -4,7 +4,7 @@ This is a Vim plugin that provides [Vala][vala] file detection, syntax highlight
 
 `vala.vim` is contains a Vim syntax, indent and ftdetect files for Vala.
 
-The base version has been imported directly from the [official site][vala-vim] and [tkztmk/vim-vala][tkztmk].
+The base version has been imported directly from the [official site][vala-vim].
 
 It improves the syntax highlighting:
 
@@ -32,7 +32,6 @@ See [Vala Legacy Bindings][ccode] for the mapping.
 
 [vala]:https://wiki.gnome.org/Projects/Vala
 [vala-vim]:https://wiki.gnome.org/Projects/Vala/Vim
-[tkztmk]:https://github.com/tkztmk/vim-vala
 [vcs]:https://wiki.gnome.org/Projects/Vala/Hacking#Coding_Style
 [ccode]:https://wiki.gnome.org/Projects/Vala/LegacyBindings
 [ultisnips]:https://github.com/sirver/UltiSnips
