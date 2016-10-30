@@ -17,9 +17,11 @@ Some of the improvements over the base version are listed below.
 
 ## Indentation
 
-* Properly indents `namespace` sections, as well as ``
+* Method arguments.
+* `namespace` sections.
+* `CCode` attributes.
 
-## UltiSnips
+## Snippets
 
 Useful snippets with [UltiSnips][ultisnips]:
 
