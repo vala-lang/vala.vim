@@ -110,7 +110,7 @@ syntax match valaCommentStartError 	display "/\*"me=e-1 contained
 syn match   valaComment		 	"/\*\*/"
 
 " Vala Code Attributes
-syn region  valaAttribute 		start="^\s*\[" end="\]$" contains=valaComment,valaString keepend
+syn region  valaAttribute 		start="^\s*\[" end="\]" contains=valaComment,valaString keepend
 syn region  valaAttribute 		start="\[CCode" end="\]" contains=valaComment,valaString
 
 " Avoid escaped keyword matching
