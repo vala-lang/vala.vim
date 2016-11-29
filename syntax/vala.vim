@@ -62,13 +62,12 @@ syn cluster valaCommentGroup 		contains=valaTodo
 syn keyword valaTodo 			contained TODO FIXME XXX NOTE
 
 " valadoc Comments (ported from javadoc comments in java.vim)
-" TODO: need to verify valadoc syntax
 if !exists("vala_ignore_valadoc")
   syn cluster valaDocCommentGroup	contains=valaDocTags,valaDocSeeTag
-  syn region  valaDocTags 		contained start="{@\(link\|linkplain\|inherit[Dd]oc\|doc[rR]oot\|value\)" end="}"
+  syn region  valaDocTags 		contained start="{@\(link\|inherit[Dd]oc\)" end="}"
   syn match   valaDocTags 		contained "@\(param\|exception\|throws\|since\)\s\+\S\+" contains=valaDocParam
   syn match   valaDocParam 		contained "\s\S\+"
-  syn match   valaDocTags 		contained "@\(author\|brief\|version\|return\|deprecated\)\>"
+  syn match   valaDocTags 		contained "@\(return\|deprecated\)\>"
   syn region  valaDocSeeTag		contained matchgroup=valaDocTags start="@see\s\+" matchgroup=NONE end="\_."re=e-1 contains=valaDocSeeTagParam
   syn match   valaDocSeeTagParam	contained @"\_[^"]\+"\|<a\s\+\_.\{-}</a>\|\(\k\|\.\)*\(#\k\+\((\_[^)]\+)\)\=\)\=@ extend
 endif
