@@ -179,7 +179,7 @@ $0
 endsnippet
 
 snippet todo "TODO comment" b
-/* TODO: $1 */
+/* TODO: ${1: task} */
 $0
 endsnippet
 
@@ -197,7 +197,8 @@ delegate ${1:type} ${2:name} (${3:arg_type} ${4:arg_name});
 $0
 endsnippet
 
-snippet doc "Valadoc comment" b
+snippet doc "doc: valadoc comment" b
+
 /**
  * ${1:Short description}
  *
@@ -206,19 +207,41 @@ snippet doc "Valadoc comment" b
  * ${3:@param ${4:parameter} ${5:parameter description}}
  *
  * ${6:@return ${7:return value description}}
- */
-$0
+ */$0
 endsnippet
 
-snippet docode "Code inside a Valadoc comment"
-{{{$1}}}
-*$0
+snippet docode "doc: code inside a valadoc comment"
+{{{${1:code}}}}$0
 endsnippet
 
-snippet @p "Valadoc parameter"
+snippet "inherit[Dd]oc" "doc: inherit descriptions from the parent" r
+{@inheritDoc}$0
+endsnippet
+
+snippet link "doc: link reference"
+{@link ${1:node name}}$0
+endsnippet
+
+snippet deprecated "doc: deprecated functionality"
+@deprecated ${1:version}$0
+endsnippet
+
+snippet see "doc: see also reference"
+@see ${1:node name}$0
+endsnippet
+
+snippet since "doc: version in which was introduced"
+@since ${1:version}$0
+endsnippet
+
+snippet param "doc: method parameter"
 @param ${1:parameter} ${2:parameter description}$0
 endsnippet
 
-snippet @r "Valadoc return"
+snippet return "doc: return value"
 @return ${1:return value description}$0
+endsnippet
+
+snippet throws "doc: exception handling"
+@throws ${1:type name} ${2: description}$0
 endsnippet
