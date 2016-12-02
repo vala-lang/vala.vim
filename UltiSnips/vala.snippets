@@ -179,8 +179,7 @@ $0
 endsnippet
 
 snippet todo "TODO comment" b
-/* TODO: ${1: task} */
-$0
+/* TODO: ${1: task} */$0
 endsnippet
 
 snippet var "var statement" b
@@ -198,15 +197,20 @@ $0
 endsnippet
 
 snippet doc "doc: valadoc comment" b
+/**
+ * ${1:Short description}
+ */$0
+endsnippet
 
+snippet docall "doc: complete valadoc comment" b
 /**
  * ${1:Short description}
  *
  * ${2:Long description}
  *
  * ${3:@param ${4:parameter} ${5:parameter description}}
- *
  * ${6:@return ${7:return value description}}
+ * ${8:@see} ${8:node name}
  */$0
 endsnippet
 
