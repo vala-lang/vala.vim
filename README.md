@@ -9,9 +9,7 @@
 
 ## Introduction
 
-This is a [Vim][vim] plugin that provides file detection, proper indentation, syntax highlighting and more for the [Vala programming language][vala].
-
-It contains a Vim syntax, indent and ftdetect files for Vala.
+vala.vim is a [Vim][vim] plugin that provides file detection, proper indentation, syntax highlighting and more for the [Vala programming language][vala].
 
 The base version has been imported directly from the [official site][vala-vim].
 
