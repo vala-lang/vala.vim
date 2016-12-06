@@ -13,7 +13,10 @@ vala.vim is a [Vim][vim] plugin that provides file detection, proper indentation
 
 The base version has been imported directly from the [official site][vala-vim].
 
-Some of the improvements over the base version are listed below.
+![vala.vim - solarized dark](https://i.imgur.com/FW2vpKj.png)
+![vala.vim - solarized light](https://i.imgur.com/mFMA3Bt.png)
+
+Some of the features displayed in the above images are listed below.
 
 ## File detection
 
@@ -26,21 +29,7 @@ It is mainly a fix on top of `cindent` to:
 
 * Method arguments.
 * Attributes like `CCode`, `DBus`, etc.
-* Lambda expressions, like those used inside a `foreach` method:
-
-```vala
-var list = new List<string> ();
-list.append ("0. entry");
-list.append ("1. entry");
-list.append ("2. entry");
-list.foreach ((entry) => {
-	stdout.puts (entry);
-	stdout.putc ('\n');
-	if (entry == null) {
-		stdout.printf ("null entry found\n");
-	}
-});
-```
+* Lambda expressions, like those used inside a `foreach` method.
 
 ## Syntax highlighting
 
