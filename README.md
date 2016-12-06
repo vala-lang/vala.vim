@@ -48,6 +48,7 @@ list.foreach ((entry) => {
 * Arrays, lists and hash tables as in `Array<int>`, `List<string>` and `HashTable<string, int>`
 * Operators and Delimiters: `+`, `-`, `*`, `/`, `=`, `( )`, `[ ]`, `{ }`...
 * String formatting in `printf`-like methods: `%d`, `%f`, `%s`, `%c`, `%u`, `%%`...
+* String templates: `@"$var1 = $(var2 * var3)"`
 
 ## Snippets
 
