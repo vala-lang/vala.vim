@@ -6,7 +6,7 @@
 " 		Sebastian Reichel <sre@ring0.de>
 " 		Adrià Arrufat <adria.arrufat@protonmail.ch>
 " Last Change: 	2016-10-20
-" Filenames: 	*.vala *.vapi
+" Filenames: 	*.vala *.vapi *.valadoc
 "
 " REFERENCES:
 " [1] http://live.gnome.org/Vala
