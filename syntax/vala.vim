@@ -123,7 +123,7 @@ syn match   valaFormatChar		contained +%\(%\|\([-]\)\?\([+]\)\?\([0-9]\+\)\?\(\.
 syn match   valaTemplateVariable	contained +\($\w\(\w\)*\)\|\($(.*)\)+
 syn region  valaString			start=+"+  end=+"+ end=+$+ contains=valaSpecialChar,valaSpecialError,valaUnicodeNumber,@Spell,valaFormatChar
 syn region  valaTemplateString		start=+@"+  end=+"+ end=+$+ contains=valaSpecialChar,valaSpecialError,valaUnicodeNumber,@Spell,valaFormatChar,valaTemplateVariable
-syn region  valaVerbatimString		start=+"""+ end=+"""+ contains=@Spell
+syn region  valaVerbatimString		start=+"""+ end=+"""+ contains=@Spell,valaFormatChar
 syn match   valaUnicodeNumber		+\\\(u\x\{4}\|U\x\{8}\)+ contained contains=valaUnicodeSpecifier
 syn match   valaUnicodeSpecifier	+\\[uU]+ contained
 syn match   valaCharacter		"'[^']*'" contains=valaSpecialChar,valaSpecialCharError
