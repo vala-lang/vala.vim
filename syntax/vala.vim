@@ -119,7 +119,7 @@ syn match   valaUserContent 		display "@\I*"
 syn match   valaSpecialError		contained "\\."
 syn match   valaSpecialCharError	contained "[^']"
 syn match   valaSpecialChar		contained +\\["\\'0abfnrtvx]+
-syn match   valaFormatChar		contained +%\(%\|\([-]\)\?\([+]\)\?\([0-9]\+\)\?\(\.\)\?\([0-9]\+\)\?\(l\?[dfiu]\|ll\?[di]\|c\|g\|hh\?[iu]\|s\)\)+
+syn match   valaFormatChar		contained +%\(%\|\([-]\)\?\([+]\)\?\([0-9]\+\)\?\(\.\)\?\([0-9]\+\)\?\(l\?[dfiu]\|ll\?[diu]\|c\|g\|hh\?[iu]\|s\)\)+
 syn match   valaTemplateVariable	contained +\($\w\(\w\)*\)\|\($(.*)\)+
 syn region  valaString			start=+"+  end=+"+ end=+$+ contains=valaSpecialChar,valaSpecialError,valaUnicodeNumber,@Spell,valaFormatChar
 syn region  valaTemplateString		start=+@"+  end=+"+ end=+$+ contains=valaSpecialChar,valaSpecialError,valaUnicodeNumber,@Spell,valaFormatChar,valaTemplateVariable
