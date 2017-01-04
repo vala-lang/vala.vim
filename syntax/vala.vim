@@ -120,9 +120,10 @@ syn match   valaSpecialError		contained "\\."
 syn match   valaSpecialCharError	contained "[^']"
 syn match   valaSpecialChar		contained +\\["\\'0abfnrtvx]+
 syn match   valaFormatChar		contained +%\(%\|\([-]\)\?\([+]\)\?\([0-9]\+\)\?\(\.\)\?\([0-9]\+\)\?\(l\?[dfiu]\|ll\?[diu]\|c\|g\|hh\?[iu]\|s\)\)+
-syn match   valaTemplateVariable	contained +\($\w\(\w\)*\)\|\($(.*)\)+
+syn match   valaTemplateVariable	contained +\($\w\(\w\)*\)+
+syn region  valaTemplateExpression	start=+$(+ end=")"
 syn region  valaString			start=+"+  end=+"+ end=+$+ contains=valaSpecialChar,valaSpecialError,valaUnicodeNumber,@Spell,valaFormatChar
-syn region  valaTemplateString		start=+@"+  end=+"+ end=+$+ contains=valaSpecialChar,valaSpecialError,valaUnicodeNumber,@Spell,valaFormatChar,valaTemplateVariable
+syn region  valaTemplateString		start=+@"+  end=+"+ end=+$+ contains=valaSpecialChar,valaSpecialError,valaUnicodeNumber,@Spell,valaFormatChar,valaTemplateVariable,valaTemplateExpression
 syn region  valaVerbatimString		start=+"""+ end=+"""+ contains=@Spell,valaFormatChar
 syn match   valaUnicodeNumber		+\\\(u\x\{4}\|U\x\{8}\)+ contained contains=valaUnicodeSpecifier
 syn match   valaUnicodeSpecifier	+\\[uU]+ contained
@@ -198,6 +199,7 @@ hi def link valaCharacter		Character
 hi def link valaSpecialChar		SpecialChar
 hi def link valaFormatChar		SpecialChar
 hi def link valaTemplateVariable	SpecialChar
+hi def link valaTemplateExpression	SpecialChar
 hi def link valaNumber			Number
 hi def link valaUnicodeNumber		SpecialChar
 hi def link valaUnicodeSpecifier	SpecialChar
