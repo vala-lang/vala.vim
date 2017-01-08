@@ -264,3 +264,21 @@ endsnippet
 snippet throws "doc: exception handling"
 @throws ${1:type name} ${2: description}$0
 endsnippet
+
+snippet maintest "main with test function" b
+public int main (string[] args) {
+	Test.init (ref args);
+
+	Test.add_func ("/${1:test_name}", ${2:() => {
+		$3
+	}});
+
+	return Test.run ();$0
+}
+endsnippet
+
+snippet testadd "add a test function" b
+Test.add_func ("/${1:test_name}", ${2:() => {
+	$3
+}});
+endsnippet
