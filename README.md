@@ -25,7 +25,7 @@ Automatic detection of `.vala`, `.vapi` and `.valadoc` files.
 
 ## Syntax highlighting
 
-* Methods: any word followed by `(`.
+* Methods: any word followed by `(`
 * Arrays, lists and hash tables as in `Array<int>`, `List<string>` and `HashTable<string, int>`
 * Operators and Delimiters: `+`, `-`, `*`, `/`, `=`, `( )`, `[ ]`, `{ }`...
 * String formatting in `printf`-like methods: `%d`, `%f`, `%s`, `%c`, `%u`, `%%`...
@@ -36,7 +36,7 @@ Automatic detection of `.vala`, `.vapi` and `.valadoc` files.
 The indentation file is largely based on the [rust.vim][rust-vim] plugin, which is mainly a fix on top of `cindent`. It improves the indentation of:
 
 * Method arguments spanning multiple lines.
-* Attributes like `CCode`, `DBus`, etc.
+* Code Attributes such as `CCode`, `DBus`, etc.
 * Lambda expressions, like those used inside a `foreach` method.
 
 ## Syntastic
@@ -49,7 +49,7 @@ One can make use of the following magic comments to specify particular packages 
 // vapidirs: vapi
 ```
 
-However, I thought it would be convenient to specify which other files should be compiled with the current one as well as additional compiler flags, which will be passed to the `valac` compiler:
+However, I thought it would be useful to be able to specify which files should be compiled with the current one, as well as additional compiler flags, which will be passed to the `valac` compiler:
 
 ``` vala
 // sources: neededfile.vala
@@ -68,14 +68,14 @@ Useful snippets with [UltiSnips][ultisnips]:
 * `switch case` statements.
 * `class`, `property`, `signal` definitions.
 * Documentation using [Valadoc][valadoc] taglets.
-* many more!
+* Many more!
 
 ## Additional functionality
 
 This plugin also comes with helper functions to:
 
-* adhere to the [Vala Coding Style][vcs].
-* insert `CCode` attributes for the symbol below the cursor, useful when creating [Vala Legacy Bindings][vlb].
+* Adhere to the [Vala Coding Style][vcs].
+* Insert `CCode` attributes for the symbol below the cursor, useful when creating [Vala Legacy Bindings][vlb].
 
 You can bind them by adding these lines to your `.vimrc`:
 
