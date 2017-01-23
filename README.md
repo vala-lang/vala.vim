@@ -1,15 +1,16 @@
 # vala.vim
 
-- [Introduction](#introduction)
+- [Description](#description)
 - [File detection](#file-detection)
-- [Indentation](#indentation)
 - [Syntax highlighting](#syntax-highlighting)
+- [Indentation](#indentation)
+- [Syntastic](#syntastic)
 - [Snippets](#snippets)
 - [Additional functionality](#additional-functionality)
 
-## Introduction
+## Description
 
-vala.vim is a [Vim][vim] plugin that provides file detection, proper indentation, syntax highlighting and more for the [Vala programming language][vala].
+This is a [Vim][vim] plugin that provides file detection, syntax highlighting, proper indentation, better [Syntastic][syntastic] integration, code snippets and more for the [Vala programming language][vala].
 
 The base version has been imported directly from the [official site][vala-vim].
 
@@ -22,15 +23,6 @@ Some of the features displayed in the above images are listed below.
 
 Automatic detection of `.vala`, `.vapi` and `.valadoc` files.
 
-## Indentation
-
-The indentation file is largely based on the [rust.vim][rust-vim] plugin.
-It is mainly a fix on top of `cindent` to:
-
-* Method arguments.
-* Attributes like `CCode`, `DBus`, etc.
-* Lambda expressions, like those used inside a `foreach` method.
-
 ## Syntax highlighting
 
 * Methods: any word followed by `(`.
@@ -38,6 +30,33 @@ It is mainly a fix on top of `cindent` to:
 * Operators and Delimiters: `+`, `-`, `*`, `/`, `=`, `( )`, `[ ]`, `{ }`...
 * String formatting in `printf`-like methods: `%d`, `%f`, `%s`, `%c`, `%u`, `%%`...
 * String templates: `@"$var1 = $(var2 * var3)"`
+
+## Indentation
+
+The indentation file is largely based on the [rust.vim][rust-vim] plugin, which is mainly a fix on top of `cindent`. It improves the indentation of:
+
+* Method arguments spanning multiple lines.
+* Attributes like `CCode`, `DBus`, etc.
+* Lambda expressions, like those used inside a `foreach` method.
+
+## Syntastic
+
+The amazing [Syntastic][syntastic] plugin already comes with support for [Vala][vala].
+One can make use of the following magic comments to specify particular packages and vapi directories, for example:
+
+``` vala
+// modules: gio-2.0 gtk+-3.0
+// vapidirs: vapi
+```
+
+However, I thought it would be convenient to specify which other files should be compiled with the current one as well as additional compiler flags, which will be passed to the `valac` compiler:
+
+``` vala
+// sources: neededfile.vala
+// flags: --enable-deprecated
+```
+
+Note that passing files like this, while convenient, is suboptimal, since their location is relative to the current working path.
 
 ## Snippets
 
@@ -53,14 +72,14 @@ Useful snippets with [UltiSnips][ultisnips]:
 
 ## Additional functionality
 
-This plugin comes with helper functions to:
+This plugin also comes with helper functions to:
 
 * adhere to the [Vala Coding Style][vcs].
 * insert `CCode` attributes for the symbol below the cursor, useful when creating [Vala Legacy Bindings][vlb].
 
-Bind them by adding these lines to your `.vimrc`:
+You can bind them by adding these lines to your `.vimrc`:
 
-```vim
+``` vim
 if has("autocmd")
 	autocmd FileType vala ValaCodingStyle
 	autocmd FileType vala noremap <F8> :CCode<CR>
@@ -68,6 +87,7 @@ end
 ```
 
 [rust-vim]:https://github.com/rust-lang/rust.vim
+[syntastic]:https://github.com/vim-syntastic/syntastic
 [vala]:https://wiki.gnome.org/Projects/Vala
 [vala-vim]:https://wiki.gnome.org/Projects/Vala/Vim
 [valadoc]:https://valadoc.org
@@ -75,3 +95,4 @@ end
 [vlb]:https://wiki.gnome.org/Projects/Vala/LegacyBindings
 [vim]:http://www.vim.org/
 [ultisnips]:https://github.com/sirver/UltiSnips
+
