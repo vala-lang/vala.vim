@@ -88,7 +88,7 @@ else
   syn region	valaCommentL		start="//" end="$" keepend contains=@valaCommentGroup,valaSpaceError,@Spell
   syn region	valaComment		matchgroup=valaCommentStart start="/\*" end="\*/" contains=@valaCommentGroup,valaCommentStartError,valaSpaceError,@Spell
   if !exists("vala_ignore_valadoc")
-    syn region 	valaDocComment 		matchgroup=valaCommentStart start="/\*\*" end="\*/" keepend contains=@valaCommentGroup,@valaDocCommentGroup,valaCommentStartError,valaSpaceError,@Spell
+    syn region 	valaDocComment 		matchgroup=valaCommentStart start="/\*\*" end="\*/" fold keepend contains=@valaCommentGroup,@valaDocCommentGroup,valaCommentStartError,valaSpaceError,@Spell
   endif
 endif
 
@@ -154,6 +154,7 @@ endif
 exec "syn sync ccomment valaComment minlines=" . b:vala_minlines
 
 " code folding
+set foldmethod=syntax
 syn region valaBlock			start="{" end="}" transparent fold
 
 " The default highlighting.
