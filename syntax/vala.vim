@@ -49,7 +49,7 @@ syn keyword valaException		try catch finally throw
 " Unspecified Statements
 syn keyword valaUnspecifiedStatement	as base construct delete get in is lock new out params ref sizeof set this throws typeof using value var yield
 " Arrays and Lists
-syn match   valaArray			"\(\w\(\w\)*\(\s\+\)\?<\)\+\(\(\s\+\)\?\w\(\w\)*\(?\)\?\(\,\)\?\)\+>\+"
+syn match   valaArray			"\(\w\(\w\)*\(\s\+\)\?<\)\+\(\(\s\+\)\?\w\(\w\)*\(?\|\*\)\?\(\,\)\?\)\+>\+"
 " Methods
 syn match   valaMethod			"\w\(\w\)*\(\s\+\)\?("he=e-1,me=e-1
 " Operators
