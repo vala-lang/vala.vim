@@ -5,7 +5,6 @@
 " 		pancake <pancake@nopcode.org>
 " 		Sebastian Reichel <sre@ring0.de>
 " 		Adrià Arrufat <adria.arrufat@protonmail.ch>
-" Last Change: 	2016-10-20
 " Filenames: 	*.vala *.vapi *.valadoc
 "
 " REFERENCES:
@@ -56,6 +55,8 @@ syn match   valaMethod			"\w\(\w\)*\(\s\+\)\?("he=e-1,me=e-1
 syn match   valaOperator		display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\|?\)=\?"
 " Delimiters
 syn match   valaDelimiter		display "(\|)\|\[\|\]\|,\|;\|:\|{\|}\|\k\@<!_\k\@!\|[[:punct:]]\@<!@[[:punct:]]\@!"
+" Enum Fields
+syn match   valaEnumField		"\.\([A-Z_]\)\+"hs=s+1
 
 " Comments
 syn cluster valaCommentGroup 		contains=valaTodo
@@ -173,6 +174,7 @@ hi def link valaArray			StorageClass
 hi def link valaMethod			Function
 hi def link valaOperator		Operator
 hi def link valaDelimiter		Delimiter
+hi def link valaEnumField		Constant
 
 hi def link valaCommentError		Error
 hi def link valaCommentStartError	Error
