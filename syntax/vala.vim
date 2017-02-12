@@ -50,13 +50,13 @@ syn keyword valaUnspecifiedStatement	as base construct delete get in is lock new
 " Arrays and Lists
 syn match   valaArray			"\(\w\(\w\)*\(\s\+\)\?<\)\+\(\(\s\+\)\?\w\(\w\)*\(?\|\*\)\?\(\,\)\?\)\+>\+"
 " Methods
-syn match   valaMethod			"\w\(\w\)*\(\s\+\)\?("he=e-1,me=e-1
+syn match   valaMethod			"\(@\)\?\w\(\w\)*\(\s\+\)\?("he=e-1,me=e-1
 " Operators
 syn match   valaOperator		display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\|?\)=\?"
 " Delimiters
 syn match   valaDelimiter		display "(\|)\|\[\|\]\|,\|;\|:\|{\|}\|\k\@<!_\k\@!\|[[:punct:]]\@<!@[[:punct:]]\@!"
 " Enum Fields
-syn match   valaEnumField		"\.\([A-Z_]\)\+"hs=s+1
+syn match   valaEnumField		"\.\([A-Z_]\)\+\([A-Z_]\)\+"hs=s+1 " ensure there are at least 2 CAPS
 
 " Comments
 syn cluster valaCommentGroup 		contains=valaTodo
