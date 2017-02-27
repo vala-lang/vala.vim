@@ -66,9 +66,9 @@ syn keyword valaTodo 			contained TODO FIXME XXX NOTE
 if !exists("vala_ignore_valadoc")
   syn cluster valaDocCommentGroup	contains=valaDocTags,valaDocSeeTag
   syn region  valaDocTags 		contained start="{@\(link\|inherit[Dd]oc\)" end="}"
-  syn match   valaDocTags 		contained "@\(param\|exception\|throws\|since\)\s\+\S\+" contains=valaDocParam
+  syn match   valaDocTags 		contained "@\(param\|exception\|throws\|since\|[Vv]ersion\)\s\+\S\+" contains=valaDocParam
   syn match   valaDocParam 		contained "\s\S\+"
-  syn match   valaDocTags 		contained "@\(return\|deprecated\)\>"
+  syn match   valaDocTags 		contained "@\(return\)\>"
   syn region  valaDocSeeTag		contained matchgroup=valaDocTags start="@see\s\+" matchgroup=NONE end="\_."re=e-1 contains=valaDocSeeTagParam
   syn match   valaDocSeeTagParam	contained @"\_[^"]\+"\|<a\s\+\_.\{-}</a>\|\(\k\|\.\)*\(#\k\+\((\_[^)]\+)\)\=\)\=@ extend
 endif
