@@ -109,6 +109,9 @@ syntax match valaCommentStartError 	display "/\*"me=e-1 contained
 " match the special comment /**/
 syn match   valaComment		 	"/\*\*/"
 
+" comment script lines
+syn region   valaScript			start="^#!" end="$"
+
 " Vala Code Attributes
 syn region  valaAttribute 		start="^\s*\[" end="\]" contains=valaComment,valaString keepend
 syn region  valaAttribute 		start="\[CCode" end="\]" contains=valaComment,valaString
@@ -187,6 +190,7 @@ hi def link valaCommentL		valaComment
 hi def link valaCommentStart		valaComment
 hi def link valaCommentSkip		valaComment
 hi def link valaComment			Comment
+hi def link valaScript			Comment
 hi def link valaDocComment		Comment
 hi def link valaDocTags 		Special
 hi def link valaDocParam 		Function
