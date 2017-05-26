@@ -18,6 +18,6 @@ augroup arrufat_vala
   autocmd!
   autocmd FileType vala
       \ if get(g:, 'vala_syntax_folding_enabled', 1) |
-      \   set foldmethod=syntax |
+      \   setlocal foldmethod=syntax |
       \ endif
 augroup END
