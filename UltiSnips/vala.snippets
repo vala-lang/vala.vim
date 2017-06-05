@@ -264,3 +264,50 @@ Test.add_func ("/${1:test_name}", ${2:() => {
 	$3
 }});
 endsnippet
+
+snippet mainoptions "add a main class with options" b
+public const string version = "${1:0.1.0}";
+
+public class ${2:Main} : Object {
+	private static bool display_version = false;
+
+	private const OptionEntry[] options = {
+		{ "version", 0, 0, OptionArg.NONE, ref display_version, "Display version number", null },$0
+		{ null } // list terminator
+	};
+
+	public static int main (string[] args) {
+
+		var args_length = args.length;
+		string help;
+		/* parse the command line */
+		try {
+			var opt_context = new OptionContext ("- ${3: application description}");
+			opt_context.set_help_enabled (true);
+			opt_context.add_main_entries (options, null);
+			opt_context.parse (ref args);
+			help = opt_context.get_help (true, null);
+		} catch (OptionError e) {
+			stdout.printf ("error: %s\n", e.message);
+			stdout.printf ("Run '%s --help' to see a full list of available command line options.\n", args[0]);
+			return 0;
+		}
+
+		/* display help if no arguments are passed */
+		if (args_length == 1) {
+			print (help + "\n");
+			return 0;
+		}
+
+		if (display_version) {
+			print ("%s - %s\n", args[0], version);
+		}
+
+		return 0;
+	}
+}
+endsnippet
+
+snippet option "Add an option to an OptionEntry" b
+{ "${1:long-name}", '${2:short}', 0, OptionArg.${4:NONE|INT|INT64|FILENAME|FILENAME_ARRAY|STRING|STRING_ARRAY}, ref ${5:variable_name}, "${6:Description}", "${7:Arg description}" },$0
+endsnippet
