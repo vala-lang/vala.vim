@@ -56,7 +56,7 @@ syn match   valaOperator		display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\|?\)=\
 " Delimiters
 syn match   valaDelimiter		display "(\|)\|\[\|\]\|,\|;\|:\|{\|}\|\k\@<!_\k\@!\|[[:punct:]]\@<!@[[:punct:]]\@!"
 " Enum Fields
-syn match   valaEnumField		"\.\([A-Z_]\)\+\([A-Z_]\)\+"hs=s+1 " ensure there are at least 2 CAPS
+syn match   valaEnumField		"\.\([A-Z_]\)\+\([A-Z_0-9]\)\+"hs=s+1 " ensure there are at least 2 CAPS or 1 CAP and 1 number
 
 " Comments
 syn cluster valaCommentGroup 		contains=valaTodo
