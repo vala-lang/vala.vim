@@ -46,7 +46,9 @@ syn keyword valaConstant		false null true
 " Exceptions
 syn keyword valaException		try catch finally throw
 " Unspecified Statements
-syn keyword valaUnspecifiedStatement	as base construct delete get in is lock new out params ref sizeof set this throws typeof using value var yield
+syn keyword valaUnspecifiedStatement	as base construct delete get in is lock new out params ref sizeof set this throws typeof value var yield
+" Includes
+syn match valaInclude			"^\s*\zs\<using\>\ze\s\w"
 " Arrays and Lists
 syn match   valaArray			"\(\w\(\w\)*\(\s\+\)\?<\)\+\(\(\s\+\)\?\w\(\w\)*\(?\|\*\)\?\(\,\)\?\)\+>\+"
 " Methods
@@ -170,6 +172,7 @@ hi def link valaModifier		StorageClass
 hi def link valaConstant		Constant
 hi def link valaException		Exception
 hi def link valaUnspecifiedStatement	Statement
+hi def link valaInclude			Include
 hi def link valaUnspecifiedKeyword	Keyword
 hi def link valaContextualStatement	Statement
 hi def link valaArray			StorageClass
