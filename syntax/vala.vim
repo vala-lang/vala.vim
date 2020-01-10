@@ -141,6 +141,10 @@ syn match   valaNumber			display "\(\<\d\+\.\d*\|\.\d\+\)\([eE][-+]\=\d\+\)\=[fF
 syn match   valaNumber			display "\<\d\+[eE][-+]\=\d\+[fFdD]\=\>"
 syn match   valaNumber			display "\<\d\+\([eE][-+]\=\d\+\)\=[fFdD]\>"
 
+" Lambda definitions (ported from java.vim)
+" needs to be defined after the parenthesis error catcher to work
+syn match valaLambdaDef "([a-zA-Z0-9_<>\[\], \t]*)\s*=>"
+
 " when wanted, highlight trailing white space
 if exists("vala_space_errors")
   if !exists("vala_no_trail_space_error")
@@ -177,6 +181,7 @@ hi def link valaUnspecifiedKeyword	Keyword
 hi def link valaContextualStatement	Statement
 hi def link valaArray			StorageClass
 hi def link valaMethod			Function
+hi def link valaLambdaDef		Function
 hi def link valaOperator		Operator
 hi def link valaDelimiter		Delimiter
 hi def link valaEnumField		Constant
