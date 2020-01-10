@@ -5,6 +5,11 @@ let b:did_ftplugin = 1
 
 setlocal efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 
+" When the matchit plugin is loaded, this makes the % command skip parens and
+" braces in comments.
+let b:match_words = '^\s*#\s*if\(\|def\|ndef\)\>:^\s*#\s*elif\>:^\s*#\s*else\>:^\s*#\s*endif\>'
+let b:match_skip = 's:comment\|string\|character\|special'
+
 " Insert a CCode attribute for the symbol below the cursor
 " https://wiki.gnome.org/Projects/Vala/LegacyBindings
 function! CCode() abort
