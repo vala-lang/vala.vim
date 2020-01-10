@@ -3,7 +3,17 @@ if exists('b:did_ftplugin')
 endif
 let b:did_ftplugin = 1
 
+" Set 'formatoptions' to break comment lines but not other lines,
+" and insert the comment leader when hitting <CR> or using "o".
+setlocal formatoptions=t formatoptions+=croql
+" j was only added in 7.3.541, so stop complaints about its nonexistence
+" Where it makes sense, remove a comment leader when joining lines.
+silent! setlocal formatoptions+=j
+
 setlocal efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,:O//
+setlocal commentstring=//%s
 
 " When the matchit plugin is loaded, this makes the % command skip parens and
 " braces in comments.
