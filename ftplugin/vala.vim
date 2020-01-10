@@ -23,3 +23,10 @@ command! -buffer -bar ValaCodingStyle call ValaCodingStyle()
 if get(g:, 'vala_syntax_folding_enabled', 1)
   setlocal foldmethod=syntax
 endif
+
+" filter files in the browse dialog
+if (has("browsefilter")) && !exists("b:browsefilter")
+  let b:browsefilter = "Vala Source Files (*.vala)\t*.vala\n" .
+        \ "Vala Vapi Files (*.vapi)\t*.vapi\n" .
+        \ "All Files (*.*)\t*.*\n"
+endif
