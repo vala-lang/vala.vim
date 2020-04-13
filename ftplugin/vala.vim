@@ -35,7 +35,7 @@ endfunction
 command! -buffer -bar CCode call CCode()
 command! -buffer -bar ValaCodingStyle call ValaCodingStyle()
 
-if get(g:, 'vala_syntax_folding_enabled', 1)
+if get(g:, 'vala_syntax_folding_enabled', 0)
   setlocal foldmethod=syntax
 endif
 
