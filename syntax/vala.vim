@@ -32,14 +32,14 @@ syn keyword valaType 			uchar uint uint8 uint16 uint32 uint64 ulong ushort
 " Storage keywords
 syn keyword valaStorage			class delegate enum errordomain interface namespace struct
 " repeat / condition / label
-syn keyword valaRepeat			break continue do for foreach return while
+syn keyword valaRepeat			break continue do for foreach return while with
 syn keyword valaConditional		else if switch assert
 " User Labels
 syn keyword valaLabel			case default
 
 " Modifiers
 syn keyword valaModifier		abstract const dynamic ensures extern inline internal override 
-syn keyword valaModifier 		private protected public requires signal static virtual volatile weak
+syn keyword valaModifier 		private protected public requires signal static virtual volatile weak partial
 syn keyword valaModifier 		async owned unowned
 " Constants
 syn keyword valaConstant		false null true
