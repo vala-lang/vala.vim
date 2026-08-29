@@ -12,7 +12,7 @@ silent! setlocal formatoptions+=j
 
 setlocal efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,:O//
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,O://
 setlocal commentstring=//%s
 
 " When the matchit plugin is loaded, this makes the % command skip parens and
