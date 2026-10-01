@@ -6,6 +6,7 @@
 " 		Sebastian Reichel <sre@ring0.de>
 " 		Adrià Arrufat <adria.arrufat@protonmail.ch>
 " Filenames: 	*.vala *.vapi *.valadoc
+" SPDX-License-Identifier: GPL-3.0-or-later
 "
 " REFERENCES:
 " [1] http://live.gnome.org/Vala

@@ -8,6 +8,7 @@
 "             Want To Public License, Version 2, as published by Sam Hocevar.
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
+"SPDX-License-Identifier: WTFPL
 "============================================================================
 
 if exists('g:loaded_syntastic_vala_valac_checker')

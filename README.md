@@ -7,6 +7,7 @@
 - [Syntastic](#syntastic)
 - [Snippets](#snippets)
 - [Additional functionality](#additional-functionality)
+- [License](#license)
 
 ## Description
 
@@ -86,6 +87,10 @@ if has("autocmd")
 	autocmd FileType vala noremap <F8> :CCode<CR>
 end
 ```
+
+## License
+
+This plugin is distributed under the terms of the GNU General Public License version 3 or later (`GPL-3.0-or-later`). See the [LICENSE](LICENSE) file for the full license text. The exception is `syntax_checkers/vala/valac.vim`, which is licensed under the WTFPL (see its header).
 
 [rust-vim]:https://github.com/rust-lang/rust.vim
 [syntastic]:https://github.com/vim-syntastic/syntastic

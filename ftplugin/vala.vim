@@ -1,3 +1,8 @@
+" Vim filetype plugin file
+" Language:         Vala
+" Author:           Adrià Arrufat <adria.arrufat@protonmail.ch>
+" SPDX-License-Identifier: GPL-3.0-or-later
+
 if exists('b:did_ftplugin')
   finish
 endif

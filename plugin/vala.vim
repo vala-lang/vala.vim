@@ -1,6 +1,7 @@
 " Vim syntastic plugin helper
 " Language: vala
 " Maintainer: Adrià Arrufat
+" SPDX-License-Identifier: GPL-3.0-or-later
 
 if exists('g:loaded_vala_vim')
     finish
