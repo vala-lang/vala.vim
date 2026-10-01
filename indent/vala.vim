@@ -41,10 +41,6 @@ function GetValaIndent(lnum)
 	" Search backwards for the previous non-empty line.
 	let prevlinenum = prevnonblank(a:lnum - 1)
 	let prevline = getline(prevlinenum)
-	while prevlinenum > 1 && prevline !~ '[^[:blank:]]'
-		let prevlinenum = prevnonblank(prevlinenum - 1)
-		let prevline = s:getline(prevlinenum)
-	endwhile
 
 	" If previous line contains a code attribute (e.g. [CCode (...)])
 	" don't increase the indentation
