@@ -2,6 +2,7 @@
 " Language:         Vala
 " Author:           Adrià Arrufat <adria.arrufat@protonmail.ch>
 " Last Change:      2016 Dec 04
+" SPDX-License-Identifier: GPL-3.0-or-later
 
 " Only load this indent file when no other was loaded.
 if exists("b:did_indent")
