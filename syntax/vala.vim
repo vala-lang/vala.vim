@@ -47,7 +47,7 @@ syn keyword valaConstant		false null true
 " Exceptions
 syn keyword valaException		try catch finally throw
 " Unspecified Statements
-syn keyword valaUnspecifiedStatement	as base construct delete get in is lock new out params ref sizeof set this throws typeof value var yield
+syn keyword valaUnspecifiedStatement	as base construct delete get in is lock new out params ref sizeof set this throws typeof var yield
 " Includes
 syn match valaInclude			"^\s*\zs\<using\>\ze\s\w"
 " Arrays and Lists
@@ -167,6 +167,12 @@ exec "syn sync ccomment valaComment minlines=" . b:vala_minlines
 " code folding
 syn region valaBlock			start="{" end="}" transparent fold
 
+" `value` is only a keyword inside property setters. These regions must come
+" after valaBlock so that they win on the same opening brace.
+syn region  valaSetter			matchgroup=valaDelimiter start="\%(\<set\_s*\)\@<={" end="}" transparent fold contains=TOP
+syn region  valaSetterBlock		matchgroup=valaDelimiter start="{" end="}" contained containedin=valaSetter,valaSetterBlock transparent fold contains=TOP
+syn keyword valaSetterValue		contained containedin=valaSetter,valaSetterBlock value
+
 " The default highlighting.
 hi def link valaType			Type
 hi def link valaStorage			StorageClass
@@ -177,6 +183,7 @@ hi def link valaModifier		StorageClass
 hi def link valaConstant		Constant
 hi def link valaException		Exception
 hi def link valaUnspecifiedStatement	Statement
+hi def link valaSetterValue		valaUnspecifiedStatement
 hi def link valaInclude			Include
 hi def link valaUnspecifiedKeyword	Keyword
 hi def link valaContextualStatement	Statement
