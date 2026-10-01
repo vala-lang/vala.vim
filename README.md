@@ -4,14 +4,14 @@
 - [File detection](#file-detection)
 - [Syntax highlighting](#syntax-highlighting)
 - [Indentation](#indentation)
-- [Syntastic](#syntastic)
+- [Linting](#linting)
 - [Snippets](#snippets)
 - [Additional functionality](#additional-functionality)
 - [License](#license)
 
 ## Description
 
-This is a [Vim][vim] plugin that provides file detection, syntax highlighting, proper indentation, better [Syntastic][syntastic] integration, code snippets and more for the [Vala programming language][vala].
+This is a [Vim][vim] plugin that provides file detection, syntax highlighting, proper indentation, code snippets and more for the [Vala programming language][vala].
 
 The base version has been imported directly from the [official site][vala-vim].
 
@@ -41,24 +41,10 @@ The indentation file is largely based on the [rust.vim][rust-vim] plugin, which 
 * Code Attributes such as `CCode`, `DBus`, etc.
 * Lambda expressions, like those used inside a `foreach` method.
 
-## Syntastic
+## Linting
 
-The amazing [Syntastic][syntastic] plugin already comes with support for [Vala][vala].
-One can make use of the following magic comments to specify particular packages and vapi directories, for example:
-
-``` vala
-// modules: gio-2.0 gtk+-3.0
-// vapidirs: vapi
-```
-
-However, I thought it would be useful to be able to specify which files should be compiled with the current one, as well as additional compiler flags, which will be passed to the `valac` compiler:
-
-``` vala
-// sources: neededfile.vala
-// flags: --enable-deprecated
-```
-
-Note that passing files like this, while convenient, is suboptimal, since their location is relative to the current working path.
+Linting is left to dedicated plugins. For example, [ALE][ale] supports [vala-lint][vala-lint] out of the box.
+For compiler errors and completion, use [vala-language-server][vls] with an LSP client.
 
 ## Snippets
 
@@ -90,15 +76,17 @@ end
 
 ## License
 
-This plugin is distributed under the terms of the GNU General Public License version 3 or later (`GPL-3.0-or-later`). See the [LICENSE](LICENSE) file for the full license text. The exception is `syntax_checkers/vala/valac.vim`, which is licensed under the WTFPL (see its header).
+This plugin is distributed under the terms of the GNU General Public License version 3 or later (`GPL-3.0-or-later`). See the [LICENSE](LICENSE) file for the full license text.
 
+[ale]:https://github.com/dense-analysis/ale
 [rust-vim]:https://github.com/rust-lang/rust.vim
-[syntastic]:https://github.com/vim-syntastic/syntastic
 [vala]:https://wiki.gnome.org/Projects/Vala
+[vala-lint]:https://github.com/vala-lang/vala-lint
 [vala-vim]:https://wiki.gnome.org/Projects/Vala/Vim
 [valadoc]:https://valadoc.org
 [vcs]:https://wiki.gnome.org/Projects/Vala/Hacking#Coding_Style
 [vlb]:https://wiki.gnome.org/Projects/Vala/LegacyBindings
+[vls]:https://github.com/vala-lang/vala-language-server
 [vim]:http://www.vim.org/
 [ultisnips]:https://github.com/sirver/UltiSnips
 
